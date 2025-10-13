@@ -2,7 +2,7 @@ INSERT INTO
     CUSTOMER
 VALUES
     (
-        'AC001',
+        02-001,
         2,
         'All Creatures',
         '21 Grace St.',
@@ -13,7 +13,7 @@ VALUES
         (206) 555 -7854
     ),
     (
-        'AD001',
+        01-001,
         1,
         'Johnathan Adams',
         '66 10th St.',
@@ -22,7 +22,7 @@ VALUES
         (206) 555 -7623,
         (206) 555 -8855
     ) (
-        'AD002',
+        01-002,
         1,
         'William Adams',
         '1122 10th St.',
@@ -32,7 +32,7 @@ VALUES
         (503) 555 -6187,
         (503) 555 -7319
     ) (
-        'AK001',
+        02-002,
         2,
         'Animal Kingdom',
         '15 Marlin Lane',
@@ -41,6 +41,15 @@ VALUES
         834835646,
         (208) 555 -7108,
         NULL
+    ) (
+        01-003,
+        2,
+        'Adam Johnson',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
     );
 
 INSERT INTO
@@ -48,67 +57,67 @@ INSERT INTO
 VALUES
     (
         'Bobo',
-        'AC001-01',
+        002-01,
         'RABBIT',
         'Long Ear',
         4 / 8 / 92,
         'M'
     ) (
         'Fido',
-        'AC001-04',
+        002-02,
         'DOG',
         'German Shepherd',
         6 / 1 / 90 'M'
     ) (
         'Presto Chango',
-        'AC001-02',
+        002-03,
         'LIZARD',
         'CHAMELEON',
         5 / 1 / 92,
         'F'
     ) (
         'Stinky',
-        'AC001-03',
+        002-04,
         'SKUNK',
         '    ',
         8 / 1 / 91,
         'M'
     ) (
         'Patty',
-        'AD001-01',
+        001-01,
         'PIG',
         'Potbelly',
         2 / 15 / 91,
         'F'
     ) (
         'Rising Sun',
-        'AD001-02',
+        001-02,
         'HORSE',
         'Palomino',
         4 / 10 / 90,
         'M'
     ) (
         'Dee Dee',
-        'AD002-01',
+        001-03,
         'DOG',
         'Mixed',
         2 / 15 / 91,
         'F'
     ) (
         'Jerry',
-        'AK001-03',
+        002-05,
         'RAT',
         '    ',
         2 / 1 / 88,
         'M'
     ) (
         'Luigi',
-        'AK-001-07',
+        002-06,
         'DOG',
         'Beagle',
         8 / 1 / 92,
         'M'
-    );
+    ) ('Fi Fi', 001-04, 'DOG', NULL, NULL, 'F');
 
 INSERT INTO
     EMPLOYEE
@@ -214,11 +223,23 @@ VALUES
     );
 
 INSERT INTO
-    SERVICE
+    SERVICES
 VALUES
-    ('T1003', 'Lab Works - Misc', '$35.00') ('T1001', 'Lab Work - Cerology', '$75.00') ('T0300', 'General Exam', '$50.00') ('M0202', 'Zinc Oxide - 4oz', '$7.80') ('T2003', 'Flea Spray', '$35.00') ('M0500', 'Nyostatine - 1oz', '$11.50') ('M0702', 'Xaritain Glyconol - 2oz', '$35.50') ('T0404', 'Repair complex fracture', '$230.00') ('T0408', 'Cast affected area', '$120');
+    (1003, 'Lab Works - Misc', '$35.00') (1001, 'Lab Work - Cerology', '$75.00') (0300, 'General Exam', '$50.00') (0202, 'Zinc Oxide - 4oz', '$7.80') (2003, 'Flea Spray', '$35.00') (0500, 'Nyostatine - 1oz', '$11.50') (0702, 'Xaritain Glyconol - 2oz', '$35.50') (0404, 'Repair complex fracture', '$230.00') (0408, 'Cast affected area', '$120');
 
---INSERT INTO
---    APPOINTMENT
---VALUES
---    ();
+INSERT INTO
+    APPOINTMENT
+VALUES
+    (
+        5 / 9 / 99,
+        'Adam Johnson',
+        'Fi Fi',
+        4,
+        ('T1003', 'T1001', 'T0300', 'M0202')
+    ) (
+        11 / 4 / 98,
+        'All Creatures',
+        'Fido',
+        3,
+        (2003, 0500, 0702, 0404, 0408)
+    );
